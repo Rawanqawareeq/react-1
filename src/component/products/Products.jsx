@@ -3,6 +3,7 @@ import React,{useEffect, useState ,Component } from 'react'
 
 function Products() {
     let [Products,setProducts]=useState([]);
+    
     const getProducts= async()=>{
         let reponse = await fetch("https://fakestoreapi.com/products");
         let data = await reponse.json();
@@ -14,9 +15,9 @@ function Products() {
     },[])
    
   return (
-    <div className='row'>
+    <div className='row me-0'>
         {Products.map( (ele)=>{
-            return <div className='col-md-4 p-5 ' key={ele.id}>
+            return <div className='col-md-4 p-5 e' key={ele.id}>
                 <h2>{ele.title}</h2>
               
                 <img src={ele.image} className='w-100' alt={ele.title} />
